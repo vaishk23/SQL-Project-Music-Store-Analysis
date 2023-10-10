@@ -3,20 +3,17 @@
 SELECT TOP 1 first_name,last_name,title,levels FROM cEmployee
 ORDER BY levels DESC
 
-
 2.Which countries have the most Invoices?
 
 Select billing_country,count(total) as total from Invoice
 Group by billing_country
 Order by total desc
 
-
 3.What are top 3 values of total invoice?
 
 SELECT TOP 3 billing_city,SUM(TOTAL)AS TOTAL FROM Invoice
 GROUP BY billing_city
 ORDER BY TOTAL DESC
-
 
 4.Which city has the best customers? We would like to throw a promotional Music
 Festival in the city we made the most money. Write a query that returns one city that
@@ -27,7 +24,6 @@ SELECT TOP 1 billing_city,SUM(TOTAL)AS TOTAL FROM Invoice
 GROUP BY billing_city
 ORDER BY SUM(TOTAL) DESC
 
-
 5.Who is the best customer? The customer who has spent the most money will be
 declared the best customer. Write a query that returns the person who has spent the
 most money
@@ -36,7 +32,6 @@ SELECT TOP 1 cCustomer.customer_id,first_name,last_name,SUM(INVOICE.TOTAL) AS TO
 INNER JOIN Invoice ON cCustomer.customer_id=Invoice.customer_id
 GROUP BY cCustomer.customer_id,first_name,last_name
 ORDER BY SUM(TOTAL) DESC
-
 
 6.Write query to return the email, first name, last name, & Genre of all Rock Music
 listeners. Return your list ordered alphabetically by email starting with A
@@ -49,7 +44,6 @@ INNER JOIN Genre ON Track.genre_id = Genre.genre_id
 WHERE Genre.name LIKE 'ROCK'
 ORDER BY email	
 
-
 7.Lets invite the artists who have written the most rock music in our dataset.
 Write q quey that returns artist name and total track count of top 10 rock bands
 
@@ -60,7 +54,6 @@ INNER JOIN Genre ON Track.genre_id = Genre.genre_id
 WHERE genre.name LIKE 'ROCK'
 GROUP BY artist.artist_id,artist.name
 ORDER BY total_Track_count desc
-
 
 8.Return all the track names that have a song length longer than the average song length.
 Return the Name and Milliseconds for each track. Order by the song length with the
