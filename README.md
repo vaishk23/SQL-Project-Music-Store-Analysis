@@ -1,4 +1,4 @@
-# SQL-Project-Music-Store-Analysis
+# SQL-Project-Music_Store_Analysis
 
 The project focuses on extracting insights from music database using SQL.The insights to be found using SQL queries are
 
